@@ -21,5 +21,7 @@ RUN set -x; \
 
 VOLUME /bower
 
+USER www-data
+
 #ENTRYPOINT bower
 CMD [ "bower" ]
