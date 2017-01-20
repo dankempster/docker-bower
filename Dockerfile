@@ -1,12 +1,9 @@
-FROM node:7.2
+FROM node:7.2-alpine
 
 MAINTAINER dev@dankempster.co.uk
 
 RUN set -x; \
-    apt-get update; \
-    apt-get install -y unzip --no-install-recommends; \
-    apt-get clean; \
-    rm -rf /var/lib/apt/lists/*; \
+    apk add --update git unzip; \
     npm install -g bower;
 
 COPY .bowerrc /
